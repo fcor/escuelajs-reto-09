@@ -13,11 +13,6 @@ const platziStore = (app) => {
     res.send(`API v2`);
   });
 
-  router.get('/receipts', (req, res, next) => {
-    let file = path.join(__dirname, receipt);
-    res.sendFile(file);
-  });
-
   router.get('/products', async (req, res, next) => {
     const storeProducts = await productService.getProducts()
     res.status(200).json(storeProducts);
